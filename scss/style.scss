@@ -1,0 +1,9 @@
+// sass --watch style.scss:../css/style.css
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=swap');
+
+@import './vendor/normilize.scss';
+@import './basis/mixin';
+@import './basis/variable';
+@import './basis/basis';
+@import './basis/layout';
+@import './module/calculator';

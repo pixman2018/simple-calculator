@@ -1,0 +1,37 @@
+/*
+esmall
+small
+medium
+large
+elarge
+*/
+@mixin respondTo( $media ) {
+    @if $media == esmall {
+        @media only screen and (max-width: $esmall) { @content; } //calc( #{$esmall} - 1px)
+    } 
+    @else if $media == small {
+        @media only screen and (min-width: $esmall) and (max-width: $small) { @content; } // calc(#{$small} -1px)
+    }
+    @else if $media == medium {
+        @media only screen and (min-width: $small) and (max-width: $medium) { @content; } // calc(#{$medium} -1px)
+    }
+    @else if $media == large {
+        @media only screen and (min-width: $medium) and (max-width: $large) { @content; } //calc(#{$large} -1px)
+    }
+    @else if $media == elarge {
+        @media only screen and (min-width: $large) { @content; }
+    }
+}
+
+// $esmall: 576px;
+// $small: 768px;
+// $medium: 992px;
+// $large: 1200px;
+
+// position center 
+@mixin verticalCenter() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

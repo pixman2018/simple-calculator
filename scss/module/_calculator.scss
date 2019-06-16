@@ -1,0 +1,107 @@
+$calculatorWidth: 400px;
+$calculatorBorderColor: #ccc;
+$calculatorBorderRadius: 5px;
+
+$calculatorScreenFontSize: 5rem;
+$calculatorScreenHeight: 80px;
+$calculatorScreenBgColor: #252525;
+$calculatorScreenFontColor: #fff;
+$calculatorScreenPaddingRight: 20px;
+$calculatorScreenPaddingLeft: 10px;
+
+// button
+$buttonHeight: 80px;
+$buttonBgColor: transparent;
+$buttonBgColorHover: #eaeaea;
+$buttonBorderColor: #c4c4c4;
+$buttonRadius: 3px;
+$buttonFontsize: 2rem;
+$buttonFontColor: #333;
+$operatorColor: #337cac;
+
+//allClear
+$allClearBgColor: #f0595f;
+$allClearBgColorHover: #f17377;
+$allClearBorderColor: #b0353a;
+$allClearFontColor: #fff;
+
+// equal-sign 
+$equalSignBgColor: #2e86c0;
+$equalSignBgColorHover: #4e9ed4;
+$equalSignBorderColor: #337cac;
+$equalSignFontColor: #fff;
+
+// grid 
+$calculatorGap: 20px; 
+
+#calculator {
+    border: 1px solid $calculatorBorderColor;
+    @include verticalCenter();
+    width: $calculatorWidth;
+
+    #calculator-screen {
+        width: 100%;
+        font-size: $calculatorScreenFontSize;
+        height: $calculatorScreenHeight;
+        border: none;
+        background-color: $calculatorScreenBgColor;
+        color: $calculatorScreenFontColor;
+        text-align: right;
+        padding: {
+            right: $calculatorScreenPaddingRight;
+            left: $calculatorScreenPaddingLeft;
+        }
+    }
+
+    button {
+        outline: none;
+        height: $buttonHeight;
+        background-color: $buttonBgColor;
+        border-radius: $buttonRadius;
+        border: 1px solid $buttonBorderColor;
+        font-size: $buttonFontsize;
+        color: $buttonFontColor;
+        background-image: linear-gradient(to bottom,$buttonBgColor,$buttonBgColor 50%,rgba(0,0,0,.04));
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+        text-shadow: 0 1px rgba(255,255,255,.4);
+
+        &:hover {
+            background-color: $buttonBgColorHover;
+        }
+    }
+
+    .operator {
+        color: $operatorColor;
+    }
+
+    .allClear {
+        background-color: $allClearBgColor;
+        border-color: $allClearBorderColor;
+        color: $allClearFontColor;
+
+        &:hover {
+            background-color: $allClearBgColorHover;
+        }
+    }
+
+    .equalSign  {
+        background-color: $equalSignBgColor;
+        border-color: $equalSignBorderColor;
+        color: $equalSignFontColor;
+        height: 100%;
+        grid-row: 2 / 6; 
+        grid-column: 4 / 5; 
+
+        &:hover {
+            background-color: $equalSignBgColorHover;
+        }
+    }
+
+    .calculator-keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: $calculatorGap;
+        padding: $calculatorGap;
+    }
+}
+
